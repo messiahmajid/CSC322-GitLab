@@ -1,0 +1,36 @@
+mkdir GitLab
+cp HelloWorld.c GitLab/
+cd GitLab
+git init
+git add HelloWorld.c
+git commit -m 'initial commit'
+git remote add origin https://github.com/messiahmajid/CSC322-GitLab.git
+git branch -M main
+git push -u origin main
+sed -i '' 's/Hello, world/Hello Crool World!/' HelloWorld.c
+git add HelloWorld.c
+git commit -m 'Changed message to Hello Crool World!'
+git push
+git branch Happy
+git checkout Happy
+git push -u origin Happy
+sed -i '' 's/Hello Crool World!/Hello Happy World!/' HelloWorld.c
+git add HelloWorld.c
+git commit -m 'Changed to Hello Happy World!'
+git push
+git checkout main
+sed -i '' 's/Hello Crool World!/Hello Very Crool World!/' HelloWorld.c
+git add HelloWorld.c
+git commit -m 'Changed to Hello Very Crool World!'
+git push
+git merge Happy
+vim HelloWorld.c
+git add HelloWorld.c
+git commit -m 'Merged Happy into main with message Hello Very Happy World!'
+git push
+sed -i '' 's/Hello Very Happy World!/Hello Crazy World!/' HelloWorld.c
+git add HelloWorld.c
+git commit -m 'Changed message to Hello Crazy World!'
+git push
+git log --all --graph > GitLog.txt
+vim GittingAlong.txt
